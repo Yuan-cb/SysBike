@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app PUBLIC
+        "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd" >
+<web-app>
+  <display-name>bike</display-name>
+
+  <filter>
+    <filter-name>UTFFilter</filter-name>
+    <filter-class>com.Filter.UTFFilter</filter-class>
+    <init-param>
+      <param-name>encoding</param-name>
+      <param-value>UTF-8</param-value>
+    </init-param>
+  </filter>
+
+  <filter-mapping>
+    <filter-name>UTFFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
+  <servlet>
+    <servlet-name>AdminBikesShowServlet</servlet-name>
+    <servlet-class>com.servlet.AdminBikesShowServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AjaxRegisterServlet</servlet-name>
+    <servlet-class>com.servlet.AjaxRegisterServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>BikesManageServlet</servlet-name>
+    <servlet-class>com.servlet.BikesManageServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>BikesServlet</servlet-name>
+    <servlet-class>com.servlet.BikesServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>com.servlet.LoginServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>RegisterServlet</servlet-name>
+    <servlet-class>com.servlet.RegisterServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UsersManageServlet</servlet-name>
+    <servlet-class>com.servlet.UsersManageServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UsersServlet</servlet-name>
+    <servlet-class>com.servlet.UsersServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UsersShowServlet</servlet-name>
+    <servlet-class>com.servlet.UsersShowServlet</servlet-class>
+  </servlet>
+
+
+  <servlet-mapping>
+    <servlet-name>AdminBikesShowServlet</servlet-name>
+    <url-pattern>/AdminBikesShowServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AjaxRegisterServlet</servlet-name>
+    <url-pattern>/AjaxRegisterServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>BikesManageServlet</servlet-name>
+    <url-pattern>/BikesManageServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>BikesServlet</servlet-name>
+    <url-pattern>/BikesServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/LoginServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>RegisterServlet</servlet-name>
+    <url-pattern>/RegisterServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UsersManageServlet</servlet-name>
+    <url-pattern>/UsersManageServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UsersServlet</servlet-name>
+    <url-pattern>/UsersServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UsersShowServlet</servlet-name>
+    <url-pattern>/UsersShowServlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>default</servlet-name>
+    <url-pattern>*.js</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>default</servlet-name>
+    <url-pattern>*.css</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>default</servlet-name>
+    <url-pattern>*.jpg</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>default</servlet-name>
+    <url-pattern>*.png</url-pattern>
+  </servlet-mapping>
+
+
+</web-app>

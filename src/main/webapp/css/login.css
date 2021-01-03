@@ -1,0 +1,31 @@
+body {
+    background-image: url(./image/backgroundImage_1.jpg);
+    background-size: cover;
+}
+
+body > div {
+    background: rgba(75, 61, 139, 0.75);
+    height: 300px;
+    width: 500px;
+    margin: auto;
+    border-radius: 25px;
+}
+
+.sub {
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 100px;
+    height: 40px;
+    border-radius: 50px;
+}
+
+span {
+    display: inline-block;
+    width: 100px;
+    font-weight: bold;
+}
+
+h1 {
+    margin-top: 200px;
+    color: aqua;
+}

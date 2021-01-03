@@ -1,0 +1,42 @@
+
+body>div{
+    background:rgba(113,222,195,0.75);
+    width: 80%;
+    height: 60%;
+    margin: auto;
+}
+
+.admitBike {
+    height: 50px;
+    border-radius: 25px;
+}
+
+.admitBike a {
+    padding: 10px;
+    background-color: greenyellow;
+    margin: 20px;
+    text-decoration: none;
+    color: black;
+}
+
+.admitBike a:hover{
+    color: red;
+}
+
+.list {
+    margin-bottom: 20px;
+}
+
+.page a {
+    display: inline-block;
+    padding: 5px;
+    background-color: white;
+    margin: 20px;
+    text-decoration: none;
+    color: black;
+    border-radius: 25px;
+    width: 80px;
+}
+.page a:hover{
+    color: red;
+}
