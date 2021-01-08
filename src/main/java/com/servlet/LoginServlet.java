@@ -44,7 +44,7 @@ public class LoginServlet extends HttpServlet {
                         if(user.getRole().equals("管理员"))
                             response.sendRedirect("adminMainPage.jsp");
                         else if(user.getRole().equals("用户"))
-                            response.sendRedirect("userMainPage.html");
+                            response.sendRedirect("userMainPage.jsp");
                     }else{
                         request.setAttribute("show2", "密码错误！");
                         request.getRequestDispatcher("login.jsp").forward(request, response);

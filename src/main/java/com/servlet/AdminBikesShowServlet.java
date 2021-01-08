@@ -69,6 +69,14 @@ public class AdminBikesShowServlet extends HttpServlet {
         //修改信息
         String msg = (String) request.getAttribute("msg");
         request.setAttribute("msg", msg);
+
+        String flag = request.getParameter("flag");
+        String flag1 = (String) request.getAttribute("flag");
+        if("rent".equals(flag) || "rent".equals(flag1)){
+            request.setAttribute("flag", "rent");
+            request.getRequestDispatcher("rentBike.jsp").forward(request, response);
+            return;
+        }
         //请求转发
         request.getRequestDispatcher("bikeListPage.jsp").forward(request, response);
     }

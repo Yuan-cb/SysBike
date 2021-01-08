@@ -57,7 +57,7 @@
         body>div{
             background:rgba(113,222,195,0.75);
             width: 80%;
-            height: 60%;
+            height: 80%;
             margin: auto;
             border-radius: 25px;
         }
@@ -123,7 +123,7 @@
             <td width="200">邮&nbsp;&nbsp;箱</td>
             <td width="150">电  话</td>
             <td width="120">注册时间</td>
-            <td width="80">身&nbsp;&nbsp;份</td>
+            <td width="80">角  色</td>
 
             </thead>
             <c:if test="${not empty requestScope.pageBean.list}">

@@ -22,6 +22,7 @@ public class UsersManageServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
 
         String manage = request.getParameter("manage");
+        String manage1 = (String) request.getAttribute("manage1");
 
         UserDao userDao = new UserDao();
         //添加用户
@@ -62,6 +63,20 @@ public class UsersManageServlet extends HttpServlet {
             return;
         }
         //查询用户
+        if("self".equals(manage) || "self".equals(manage1)){
+            User userSearch = (User) request.getSession().getAttribute("session_user");
+            Order orderByUser_id = OrderDao.searchOrder_state(userSearch.getUser_Id().toString(), "未付");
+            request.setAttribute("userSearch", userSearch);
+            if(orderByUser_id != null)
+                request.setAttribute("order_Id", orderByUser_id.getOrder_Id());
+            request.setAttribute("msg", request.getParameter("msg"));
+            if("self".equals(manage))
+                request.setAttribute("manage", manage);
+            if("self".equals(manage1))
+                request.setAttribute("manage", manage1);
+            request.getRequestDispatcher("userMessage.jsp").forward(request, response);
+            return;
+        }
         if(manage == "search" || "search".equals(manage)){
             String msg = request.getParameter("search_msg");
             //name查询
@@ -78,10 +93,12 @@ public class UsersManageServlet extends HttpServlet {
                     }
                 }
             }
-            Order orderByUser_id = OrderDao.getOrderByUser_Id(userSearch.getUser_Id());
+            //查询用户是否有未付订单
+            Order orderByUser_id = OrderDao.searchOrder_state(userSearch.getUser_Id().toString(), "未付");
             request.setAttribute("userSearch", userSearch);
             if(orderByUser_id != null)
                 request.setAttribute("order_Id", orderByUser_id.getOrder_Id());
+            request.setAttribute("manage", manage);
             request.getRequestDispatcher("userMessage.jsp").forward(request, response);
             return;
         }

@@ -33,12 +33,13 @@ public class OrderDao {
         return DButils.searchDate(Order.class, sql, user_id);
     }
 
-    public Order getOrderByBike(String bike_id) {
+
+    public static Order getOrderByBike(String bike_id) {
         String sql = "select * from bike_order where bike_Id=?";
         return DButils.searchDate(Order.class, sql, bike_id);
     }
 
-    public List<Order> getOrderCount(String key, String value) {
+    public static List<Order> getOrderCount(String key, String value) {
         String sql = "select * from bike_order";
         if(key != null){
             sql += " where " + key + "=?";
@@ -60,5 +61,15 @@ public class OrderDao {
     public boolean updateState(String order_Id, String state) {
         String sql = "update bike_order set order_state=? where order_Id =?";
         return DButils.updateDate(sql, state, order_Id);
+    }
+
+    public Order getOrderByUser(Integer user_id) {
+        String sql = "select * from bike_order where user_Id = ?";
+        return DButils.searchDate(Order.class, sql, user_id);
+    }
+
+    public static Order searchOrder_state(String id, String state){
+        String sql = "select * from bike_order where user_Id = ? and order_state = ?";
+        return DButils.searchDate(Order.class, sql, id, state);
     }
 }

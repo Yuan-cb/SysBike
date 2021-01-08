@@ -1,6 +1,8 @@
 package com.servlet;
 
+import com.bean.Bike;
 import com.bean.User;
+import com.dao.BikeDao;
 import com.dao.UserDao;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -22,6 +24,7 @@ public class AjaxRegisterServlet extends HttpServlet {
         String name = request.getParameter("name");
         String email = request.getParameter("email");
         String phone = request.getParameter("phone");
+        String bikeId = request.getParameter("bike_Id");
 
         //数据库查询
         UserDao userDao = new UserDao();//jdbc
@@ -51,6 +54,15 @@ public class AjaxRegisterServlet extends HttpServlet {
             //电话查询
             User userByPhone = userDao.getUserByPhone(phone);
             if(userByPhone == null){
+                mapper.writeValue(response.getWriter(), true);
+            }else{
+                mapper.writeValue(response.getWriter(), false);
+            }
+        }
+        if (bikeId != null){
+            BikeDao bikeDao = new BikeDao();
+            Bike bike = bikeDao.getBikeById(bikeId);
+            if (bike == null){
                 mapper.writeValue(response.getWriter(), true);
             }else{
                 mapper.writeValue(response.getWriter(), false);

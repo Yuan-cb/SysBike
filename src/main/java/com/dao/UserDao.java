@@ -19,7 +19,7 @@ public class UserDao {
      * @Author: Yuan
      * @Date: 2020/12/29
      */
-    public User getUserByName(String name) {
+    public static User getUserByName(String name) {
 
         String sql = "select * from user where name=?";
         return DButils.searchDate(User.class, sql, name);

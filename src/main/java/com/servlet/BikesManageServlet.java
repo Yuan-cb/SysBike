@@ -33,7 +33,7 @@ public class BikesManageServlet extends HttpServlet {
             if(id != null || !"".equals(id)){
                 //数据库id查询
                 BikeDao bikeDao = new BikeDao();
-                Bike bike = bikeDao.getUserById(id);
+                Bike bike = bikeDao.getBikeById(id);
                 if(bike != null){
                     request.setAttribute("bike", bike);
                     request.setAttribute("manage", "修 改");

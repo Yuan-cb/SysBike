@@ -87,7 +87,7 @@
     body>div{
         background:rgba(113,222,195,0.75);
         width: 80%;
-        height: 60%;
+        height: 80%;
         margin: auto;
     }
 
